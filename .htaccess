@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+ RewriteEngine On
+ RewriteBase /
+ RewriteRule ^(wp-admin)($|/) - [L] # You don't want to mess with WordPress 
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteCond %{REQUEST_FILENAME}\.php -f
+ RewriteRule .* $0.php
+
+ RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
+ RewriteRule ^/?(.*)\.php$ /$1 [L,R=301]
+
+ RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+view/([^\s]+) [NC]
+ RewriteRule ^ %1 [R=301,L]
+
+ RewriteCond %{REQUEST_FILENAME}\.php -f
+ RewriteRule ^/?(.*)$ /$1.php [L]
+
+ RewriteRule (?!^view/)^(.*)$ /view/$1 [L,NC]
+
+</IfModule>
