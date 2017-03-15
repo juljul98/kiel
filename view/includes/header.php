@@ -9,7 +9,10 @@
         require_once ($models);
     }
 
+    $function = new models();
+    
     $title = $input->capitalize(HELPER::page()); 
+
     $controller_name = HELPER::page() .'.php';
     
     require_once('../controller/'.$controller_name);
@@ -20,5 +23,7 @@ echo '<!DOCTYPE html>
 	<meta charset="UTF-8">
 	<title>'.$title.'</title>
 </head>
-<body>';
+<body>
+<a href="/login">Login</a>
+<a href="/register">Register</a>';
 	

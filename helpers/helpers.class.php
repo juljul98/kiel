@@ -34,13 +34,6 @@
 			return $actual_link;
 		}
 
-		public static function ACTION() {
-			$post = array_keys($_POST);
-			$get_last = end($post);
-			$post_name = explode("_", $get_last);
-			return $post_name[0];
-		}
-
 		// QUERY BUILDER
 
 		public function show_query($sql_query) {

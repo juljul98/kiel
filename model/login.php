@@ -51,4 +51,4 @@
 			* @return End of the Authentication module
 		*/
 	}
-	$function = new models();
+	
