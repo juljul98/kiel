@@ -1,3 +1,6 @@
 <?php
- echo '</body>
+ echo 
+    '<script src="assets/js/jquery.js"></script>
+    <script src="assets/js/script.js"></script> 
+ </body>
 </html>';

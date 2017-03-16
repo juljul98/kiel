@@ -1,5 +1,6 @@
 <?php
 	include "includes/header.php";
+	
 	echo 
 	'<form action="" method="post">
 		<div>
@@ -10,6 +11,10 @@
 			<label for="password">Password</label>
 			<input type="password" name="password" placeholder="Password" id="password">
 		</div>
+		<div>
+			<input type="checkbox" name="remember">
+		</div>
 		<div><button type="submit" name="login">Send</button></div>
 	</form>';
-
+	print_r($error);
+	include "includes/footer.php";

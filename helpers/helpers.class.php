@@ -11,6 +11,11 @@
 			return $request;
 		}
 
+		public function file($data) {
+			$file = $_FILES["$data"];
+			return $file;
+		}
+
 		public static function AUTH() {
 			$fullname = $_SESSION['fullname'];
 			return $fullname;
@@ -46,5 +51,8 @@
 			mysqli_query($this->dtb->connect(), $sql_query);
 		}
 	}
+	
 	// Public functions
 	$input = new helper();
+	// Static functions
+	//HELPER::auth();
